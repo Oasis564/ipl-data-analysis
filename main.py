@@ -32,10 +32,20 @@
 
 # read the entire file and print each row using the CSV module and convert th content into a list before printing
   
+# import csv
+
+# with open("IPL_2018.csv", 'r') as f:
+#     content = csv.reader(f)
+#     content_list = list(content)
+#     for i in range(0, len(content_list)):
+#         print(content_list[i])
+        
+# Total runs scored by Aaron Finch in IPL2018 are 134
+
 import csv
 
 with open("IPL_2018.csv", 'r') as f:
-    content = csv.reader(f)
-    content_list = list(content)
-    for i in range(0, len(content_list)):
-        print(content_list[i])
+     content = csv.reader(f)
+     content_list = list(content)
+     for i in range(0, len(content_list)):
+        print(f"Total runs scored by {content_list[i][0]} in IPL2018 are {content_list[i][4]}")
