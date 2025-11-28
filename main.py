@@ -42,10 +42,22 @@
         
 # Total runs scored by Aaron Finch in IPL2018 are 134
 
+# import csv
+
+# with open("IPL_2018.csv", 'r') as f:
+#      content = csv.reader(f)
+#      content_list = list(content)
+#      for i in range(0, len(content_list)):
+#         print(f"Total runs scored by {content_list[i][0]} in IPL2018 are {content_list[i][4]}")
+        
+# get all the values inside the X6s column inside a list variable
+
 import csv
 
 with open("IPL_2018.csv", 'r') as f:
-     content = csv.reader(f)
-     content_list = list(content)
-     for i in range(0, len(content_list)):
-        print(f"Total runs scored by {content_list[i][0]} in IPL2018 are {content_list[i][4]}")
+   content = csv.reader(f)
+   content_list = list(content)
+   sixers = []
+   for row in content_list[12]:
+      sixers.append(row)
+   print(sixers)
