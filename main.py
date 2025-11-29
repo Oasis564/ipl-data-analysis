@@ -52,12 +52,47 @@
         
 # get all the values inside the X6s column inside a list variable
 
+# import csv
+
+# with open("IPL_2018.csv", 'r') as f:
+#    content = csv.reader(f)
+#    content_list = list(content)
+#    sixers = []
+#    # in this for loop, for every row there is in content_list(aside from the first) we append sixers and put row which we convert to an integer and then specify which row we want exactly which is the X6s so that is 12.
+#    for row in content_list[1:]:
+#       sixers.append(int(row[12]))
+#    print(sixers)
+#    print(sum(sixers))
+   
+# import csv
+
+# with open("IPL_2018.csv", 'r') as f:
+#    content = csv.reader(f)
+#    content_list = list(content)
+#    wickets = []
+#    # in this for loop, for every row there is in content_list(aside from the first) we append sixers and put row which we convert to an integer and then specify which row we want exactly which is the X6s so that is 12.
+#    for row in content_list[1:]:
+#       wickets.append(int(row[17]))
+#    print(wickets)
+#    print(sum(wickets))
+
 import csv
 
-with open("IPL_2018.csv", 'r') as f:
-   content = csv.reader(f)
-   content_list = list(content)
-   sixers = []
-   for row in content_list[12]:
-      sixers.append(row)
-   print(sixers)
+with open("New.csv", 'w') as f:
+   # The csv_writer will act as a pen to write inside a csv file
+   csv_writer = csv.writer(f)
+   # below will be the header for our csv file
+   header = ("Name", "Class", "City")
+   # below will be the data inside the csv
+   data = (
+      ("Cameron", "3D1", "Edinburgh"),
+      ("Matti", "3B1", "Edinburgh"),
+      ("Milosz", "4B1", "Edinburgh"),
+      ("Damo", "3A1", "Edinburgh")
+   )
+   
+   # below will be used to create the header inside the csv file
+   csv_writer.writerow(header)
+   # below code will be used to write the data inside the csv file
+   for row in data:
+      csv_writer.writerow(row)
